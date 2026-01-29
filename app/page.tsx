@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Header from './_components/Header';
 
 export default function Home() {
   return (
-   <div>
-    <h1 className="text-7xl font-pixel">Hello World</h1>
+   <div className="flex  flex-col">
+   <Header/>
    </div>
   );
 }
