@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Hero = () => {
@@ -13,7 +14,9 @@ const Hero = () => {
           <p className='mt-6  text-[#f2ff00] '>Join codeQuest to Unlock Gamified Learning Experience</p>
 
           <div className='mt-8'>
+            <Link href="/sign-up">
             <Button variant={'pixel'} size={'lg'} className='font-pixel text-2xl'>Get Started</Button>
+            </Link>
           </div>
 </div>
     </div>
