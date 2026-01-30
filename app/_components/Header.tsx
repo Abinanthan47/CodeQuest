@@ -1,3 +1,5 @@
+
+'use client';
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
@@ -12,6 +14,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { CircleAlertIcon } from "lucide-react";
+import { UserButton, useUser } from "@clerk/nextjs";
 
 const courses = [
   {
@@ -41,6 +44,8 @@ const courses = [
 ];
 
 const Header = () => {
+
+  const {user} = useUser();
   return (
     <div className="flex max-w-7xl p-4 justify-between mx-auto items-center w-full">
       <div className="flex gap-2 items-center justify-center">
@@ -86,9 +91,24 @@ const Header = () => {
       {/* Button Get started / login */}
 
       <div>
+        {!user ? ( 
+          <Link href="/sign-up">
         <Button variant={"pixel"} className="font-pixel text-2xl">
           Get Started
         </Button>
+      </Link>
+        ) : (
+          <div className="flex gap-4 items-center">
+          <Link href="/dashboard">
+            <Button variant={"pixel"} className="font-pixel text-2xl">
+              Dashboard
+            </Button>
+          </Link>
+          <div>
+            <UserButton/>
+          </div>
+      </div>
+        )}
       </div>
     </div>
   );
