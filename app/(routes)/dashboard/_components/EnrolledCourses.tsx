@@ -2,6 +2,7 @@
 import React,{ useState } from "react";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 function EnrolledCourses() {
     const[enrolledCourses,setEnrolledCourses]=useState([]);
@@ -18,7 +19,9 @@ function EnrolledCourses() {
       className="w-30 h-20"
     />
     <h2 className="font-pixel text-2xl">You Dont have Enrolled in any courses</h2>
+    <Link href="/courses">
     <Button className="font-pixel text-2xl" variant={'pixel'}>Explore Courses</Button>
+    </Link>
            </div>
         </div> :
         <div>
